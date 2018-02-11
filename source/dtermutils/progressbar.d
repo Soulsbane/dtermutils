@@ -57,7 +57,10 @@ struct ProgressBar
 		}
 	}
 
-	void clearLine()
+	/**
+		Clears the line. Imagine that!
+	*/
+	void clearLine() //FIXME: Probably should be a module function.
 	{
 		stdout.flush();
 		write("\33[2K\r");
