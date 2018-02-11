@@ -5,8 +5,7 @@ module dtermutils.cursor;
 
 import std.stdio : write;
 
-private immutable SHOW_CURSOR = "\x1b[?25h";
-private immutable HIDE_CURSOR = "\x1b[?25l";
+import dtermutils.constants;
 
 /**
 	Shows the cursor.

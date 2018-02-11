@@ -9,6 +9,7 @@ import std.conv;
 import std.range;
 
 import dtermutils.cursor;
+import dtermutils.constants;
 
 ///Handles the creation of a progressbar.
 struct ProgressBar
@@ -63,7 +64,7 @@ struct ProgressBar
 	void clearLine() //FIXME: Probably should be a module function.
 	{
 		stdout.flush();
-		write("\u001b[2K");
+		write(CLEAR_LINE);
 	}
 
 private:
