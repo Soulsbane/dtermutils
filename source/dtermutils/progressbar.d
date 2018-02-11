@@ -63,7 +63,7 @@ struct ProgressBar
 	void clearLine() //FIXME: Probably should be a module function.
 	{
 		stdout.flush();
-		write("\33[2K\r");
+		write("\u001b[2K");
 	}
 
 private:
