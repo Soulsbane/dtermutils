@@ -1,0 +1,8 @@
+name "dtermutils"
+description "Various terminal utilities(Progress Bars, spinners etc).."
+copyright "Copyright © 2018"
+authors "Paul Crane"
+targetType "library"
+configuration "library" {
+	targetType "library"
+}
