@@ -1,14 +1,14 @@
 /**
 	Module for creating a progressbar in the terminal.
 */
-module raijin.terminal.progressbar;
+module dtermutils.progressbar;
 
 import std.stdio;
 import std.math;
 import std.conv;
 import std.range;
 
-import raijin.terminal.cursor;
+import dtermutils.cursor;
 
 ///Handles the creation of a progressbar.
 struct ProgressBar

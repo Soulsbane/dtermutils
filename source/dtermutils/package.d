@@ -1,7 +1,7 @@
-module raijin.terminal;
+module dtermutils;
 
 public
 {
-	import raijin.terminal.progressbar;
-	import raijin.terminal.cursor;
+	import dtermutils.progressbar;
+	import dtermutils.cursor;
 }

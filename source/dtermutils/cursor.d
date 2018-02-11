@@ -1,7 +1,7 @@
 /**
 	Provides functions for showing/hiding the mouse cursor in a terminal.
 */
-module raijin.terminal.cursor;
+module dtermutils.cursor;
 
 import std.stdio : write;
 
