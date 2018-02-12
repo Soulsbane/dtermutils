@@ -2,6 +2,7 @@ module dtermutils;
 
 public
 {
-	import dtermutils.progressbar;
 	import dtermutils.cursor;
+	import dtermutils.progressbar;
+	import dtermutils.prompts;
 }
