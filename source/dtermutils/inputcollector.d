@@ -11,7 +11,7 @@ struct InputCollector
 {
 	bool hasValueFor(const string key)
 	{
-		if(key in _Values)
+		if(key in values_)
 		{
 			return true;
 		}
@@ -23,7 +23,7 @@ struct InputCollector
 	{
 		if(hasValueFor(key))
 		{
-			return _Values[key].value;
+			return values_[key].value;
 		}
 
 		return string.init;
@@ -33,14 +33,14 @@ struct InputCollector
 	{
 		if(hasValueFor(name))
 		{
-			_Values[name].enabled = false;
+			values_[name].enabled = false;
 		}
 		else
 		{
 			Prompt prompt;
 
 			prompt.enabled = true;
-			_Values[name] = prompt;
+			values_[name] = prompt;
 		}
 	}
 
@@ -48,7 +48,7 @@ struct InputCollector
 	{
 		if(hasValueFor(name))
 		{
-			_Values[name].enabled = false;
+			values_[name].enabled = false;
 		}
 		else
 		{
@@ -56,7 +56,7 @@ struct InputCollector
 
 			prompt.variableName = name;
 			prompt.enabled = false;
-			_Values[name] = prompt;
+			values_[name] = prompt;
 		}
 	}
 
@@ -64,7 +64,7 @@ struct InputCollector
 	{
 		if(hasValueFor(name))
 		{
-			return _Values[name].enabled;
+			return values_[name].enabled;
 		}
 
 		return false;
@@ -72,9 +72,9 @@ struct InputCollector
 
 	CollectedValues getAllPromptValues()
 	{
-		return _Values;
+		return values_;
 	}
 
 	alias CollectedValues = Prompt[string];
-	private CollectedValues _Values;
+	private CollectedValues values_;
 }
