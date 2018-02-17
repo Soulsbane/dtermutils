@@ -9,6 +9,46 @@ struct Prompt
 
 struct InputCollector
 {
+	string prompt(const string globalVarName, const string msg, string defaultValue = string.init)
+	{
+		bool promptEnabled = true;
+		string input;
+
+		if(hasValueFor(globalVarName))
+		{
+			promptEnabled = values_[globalVarName].enabled;
+		}
+
+		if(promptEnabled)
+		{
+			if(defaultValue == string.init)
+			{
+				writef("%s: ", msg);
+			}
+			else
+			{
+				writef("%s [%s]: ", msg, defaultValue);
+			}
+
+			input = readln();
+
+			if(input == "\x0a") // Only enter was pressed use the default value instead.
+			{
+				input = defaultValue;
+			}
+
+			Prompt prompt;
+
+			prompt.variableName = globalVarName;
+			prompt.value = input.strip;
+			prompt.enabled = promptEnabled;
+
+			values_[globalVarName] = prompt;
+		}
+
+		return input.strip;
+	}
+
 	bool hasValueFor(const string key)
 	{
 		if(key in values_)
