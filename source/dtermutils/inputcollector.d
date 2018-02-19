@@ -1,5 +1,8 @@
 module dtermutils.inputcollector;
 
+import std.stdio;
+import std.string;
+
 struct Prompt
 {
 	string variableName;
