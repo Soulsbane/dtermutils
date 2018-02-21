@@ -12,14 +12,14 @@ struct Prompt
 
 struct InputCollector
 {
-	string prompt(const string globalVarName, const string msg, string defaultValue = string.init)
+	string prompt(const string promptName, const string msg, string defaultValue = string.init)
 	{
 		bool promptEnabled = true;
 		string input;
 
-		if(hasValueFor(globalVarName))
+		if(hasValueFor(promptName))
 		{
-			promptEnabled = values_[globalVarName].enabled;
+			promptEnabled = values_[promptName].enabled;
 		}
 
 		if(promptEnabled)
@@ -42,11 +42,11 @@ struct InputCollector
 
 			Prompt prompt;
 
-			prompt.variableName = globalVarName;
+			prompt.variableName = promptName;
 			prompt.value = input.strip;
 			prompt.enabled = promptEnabled;
 
-			values_[globalVarName] = prompt;
+			values_[promptName] = prompt;
 		}
 
 		return input.strip;
