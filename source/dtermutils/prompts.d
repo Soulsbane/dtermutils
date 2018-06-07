@@ -39,7 +39,7 @@ T prompt(T = string)(const string message = "Answer: ")
 	Display a prompt that contains a yes(Y/y) or no instruction.
 
 	Params:
-		message = The prompt message.
+		msg = The prompt message.
 
 	Returns:
 		True if input is 'y' or 'Y'. False otherwise.
